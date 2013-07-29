@@ -1,0 +1,196 @@
+body {
+	background-image: url(../img/background.jpg);
+	font-family: verdana;
+}
+
+#red {
+	color: red;
+	font-size: 20px;
+}
+
+#red1 {
+	color: red;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+p {
+	font-size: 12px;
+}
+
+#divider {
+	height: 1px;
+	margin: 20px 0 30px 0;
+	background-color: #e5e5e5;
+}
+
+#box {
+	background-color: white;
+	border-radius: 5px 5px 0 0;
+	color: #787879;
+}
+
+#box > div {
+	margin: 30px 20px;
+}
+
+#box > form > div{
+	margin: 30px 20px;
+}
+
+label {
+	font-weight: bold;
+}
+
+input[type="radio"], input[type="checkbox"] {
+	margin: 3px 0 0;
+	position: absolute;
+}
+
+/*asterisco validación*/
+#validation-name {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 405px;
+	display: none;
+}
+
+#validation-lastname {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 405px;
+	display: none;
+}
+
+#validation-email {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 405px;
+	display: none;
+}
+
+#validation-phone {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 405px;
+	display: none;
+}
+
+#validation-country {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	margin-top: 5px;
+	margin-left: 405px;
+	display: none;
+}
+
+input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+	background-color: #dedede;
+	margin-left: 20px;
+	width: 268px;
+	margin-bottom: 22px;
+	border: none;
+}
+
+textarea {
+	background-color: #dedede;
+	margin-left: 30px;
+	width: 270px;
+	margin-bottom: 20px;
+	border: none;
+}
+
+/*Error al validar un imput*/
+.error-input {
+	background-color: #bab9b9!important;
+	color: white!important;
+}
+
+.styled-select {
+	height: 26px;
+	overflow: hidden;
+	overflow: -moz-hidden-unscrollable;
+	background: url(../img/caret.png) no-repeat right;
+	background-color: #dedede;
+	margin-left: 40px;
+	width: 270px;
+	margin-bottom: 20px;
+	border: none;
+	display: inline-block;
+	position:relative;
+	border-radius: 5px 0 0 5px;
+	padding-right: 10px;
+}
+
+.styled-select select {
+	background: transparent;
+	-webkit-appearance: none;
+	width: 280px;
+	font-size: 12px;
+	border: 0;
+	height: 33px;
+	position: absolute;
+	left: 0;
+	top: -7px;
+	border-radius: 5px 0 0 5px;
+}
+
+#enviar {
+	margin-left: 370px;
+}
+
+#select {
+	width: 250px;
+	color: #787879;
+}
+
+.btn-group {
+	margin-bottom: 10px;
+}
+
+#title {
+	color: #004998;
+	font-size: 14px;
+}
+
+.row > .span12 > img {
+	margin-bottom: 10px;
+	border-radius: 10px;
+}
+
+footer {
+	background-color: #1b4d9c;
+	border-radius: 5px;
+	padding:10px 0 10px 0;
+	color: white;
+	font-size: 12px;
+}
+
+footer > .row > .span4 {
+	margin-left: 50px;
+}
+
+footer > .row > .span3 {
+	margin-right: -50px;
+}
+
+.modal-header {
+	padding: 50px;
+	text-align: center;
+	color: #787879;
+	border-bottom: none;
+}
