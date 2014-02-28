@@ -10,6 +10,7 @@
 		<script>
 			$(function() {
 
+
 				$("input[type=submit]").click(function() {
 					
 					if(validateForm()){
@@ -48,7 +49,11 @@
 
 			function validateForm(){
 				var error = false;
-				
+
+				var ck_name = /^[a-zA-ZÀ-ÖØ-öø-ſ]+$/;
+				var ck_number = /^\d{1,20}$/;
+				var ck_email = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+
 				$("form input").removeClass("error-input");
 				$("#validation-name").hide();
 				$("#validation-lastname").hide();
@@ -56,15 +61,15 @@
 				$("#validation-phone").hide();
 				$("#validation-country").hide();
 
-				  if ($("#first_name").val() == "") {
+				  if ( $("#first_name").val() == "" || !ck_name.test($("#first_name").val()) ) {
 				    error = true;
-				    $("#first_name").attr("placeholder", "Debe introducir un nombre");
+				    $("#first_name").attr("placeholder", "Debe introducir un nombre correcto");
 				    $("#first_name").addClass("error-input");
 				    $("#validation-name").show();
 				    return false;
 				  }
 
-				  if ($("#last_name").val() == "") {
+				  if ($("#last_name").val() == "" || !ck_name.test($("#last_name").val()) ) {
 				    error = true;
 				    $("#last_name").attr("placeholder", "Debe introducir un apellido");
 				    $("#last_name").addClass("error-input");
@@ -72,29 +77,18 @@
 				    return false;
 				  }
 
-				  if ($("#email").val() == "") {
+				  if ($("#email").val() == "" || !ck_email.test($("#email").val()) ) {
 				    error = true;
 				    $("#email").attr("placeholder", "Debe introducir un email");
 				    $("#email").addClass("error-input");
 				    $("#validation-email").show();
 				    return false;
 				  }
-				else {
-					   email_address = $('#email').val();
-					   email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
-					   if(!email_regex.test(email_address)) { 
-				    	error = true;
-					   	$("#email").attr("placeholder", "Debe introducir un email");
-				    	$("#email").addClass("error-input");
-				    	$("#validation-email").show();  
-					   return false;
-					  }    	
-					}
 
-				  if ($("#phone").val() == "") {
+				  if ($("#00Ni000000Bv3qb").val() == "" || !ck_number.test($("#00Ni000000Bv3qb").val()) ) {
 				    error = true;
-				    $("#phone").attr("placeholder", "Debe introducir un teléfono");
-				    $("#phone").addClass("error-input");
+				    $("#00Ni000000Bv3qb").attr("placeholder", "Debe introducir un teléfono");
+				    $("#00Ni000000Bv3qb").addClass("error-input");
 				    $("#validation-phone").show();
 				    return false;
 				  }
@@ -107,11 +101,20 @@
 				    return false;
 				  }
 
+				  if ($("#lead_source").val() == "") {
+				    error = true;
+				    $("#lead_source").attr("placeholder", "Seleccione");
+				    $("#lead_source").addClass("error-input");
+				    $("#validation-lead").show();
+				    return false;
+				  }
+
 				  return true;
 			}
 		</script>		
 		<script type="text/javascript">
 		$(document).ready(function() {
+
 			var url = document.URL;
 			var arrayUrl = url.split("?");
 			if (arrayUrl.length >1) {
@@ -120,7 +123,6 @@
 				$("#network").val(red);	
 			};
 
-			
 		});
 	</script>
 
@@ -147,7 +149,9 @@
 			<div class="row">
 				<div class="span12" id="box">
 					<div class="row">
-						<div class="span5" id="title"><h2>¡Abre tu cuenta ya!</h2></div>
+						<div class="span5" id="title">
+							<h2>¡Abre tu cuenta ya!</h2>
+						</div>
 					</div>
 					<div class="row">
 						<div class="span5">
@@ -179,13 +183,15 @@
 						</div>
 					</div>
 					<div id="divider"></div>
-					<form id="contacto-itb" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
-					<div class="row">
-						<div class="span5">
-							
-								<input type=hidden name="oid" value="00Di0000000H1br">
-								<input type=hidden name="retURL" value="http://www.italbank.com/landing/gracias.html">
-								<input id="network" name="red" type="hidden"></input>
+					<!-- FORMULARIO -->
+					<!-- <form id="contacto-itb" action="https://www.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST"> -->
+					<form id="contacto-itb" >
+						<input type=hidden name="oid" value="00Di0000000H1br">
+						<input type=hidden name="retURL" value="http://www.italbank.com/landing/gracias.html">
+						<input id="network" name="red" type="hidden">
+
+						<div class="row">
+							<div class="span5">
 								<div class="row">
 									<div class="span1">
 										<label for="first_name">Nombres:</label>
@@ -215,10 +221,10 @@
 								</div>	
 								<div class="row">
 									<div class="span1">
-										<label for="phone">Tel&eacute;fono:</label>
+										<label for="00Ni000000Bv3qb">Tel&eacute;fono:</label>
 									</div>
 									<div class="span4">
-										<input id="00Ni000000Bv3qb" maxlength="40" name="00Ni000000Bv3qb" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text"/>
+										<input id="00Ni000000Bv3qb" maxlength="40" name="00Ni000000Bv3qb" size="20" type="text"/>
 									</div>
 									<div id="validation-phone">*</div>
 								</div>	
@@ -479,19 +485,8 @@
 										</select>
 									</div>
 								</div>
-						</div>
-						<div class="span6">
-							
-								<div class="row">
-									<div class="span4 offset1">
-										¿Est&aacute;s interesado en recibir informaci&oacute;n de ItalBank?
-									</div>
-									<div class="span1">
-										<div class="pull-right" style="margin-right:12px">
-											<input type="checkbox" type="checkbox" id="information" > 
-										</div>
-									</div>
-								</div>
+							</div>
+							<div class="span6">
 								<div class="row">
 									<div class="span2 offset1">
 										<label for="lead_source">&iquest;C&oacute;mo supiste de nosotros?:</label>
@@ -528,6 +523,7 @@
 											<option value="Word of mouth">Word of mouth</option>
 										</select>
 									</div>
+									<div id="validation-lead">*</div>
 								</div>
 								<div class="row">
 									<div class="span2 offset1">
@@ -536,16 +532,26 @@
 									<div class="span3">
 										<textarea rows="8"name="description" id="description"></textarea>
 									</div>
+								</div>
+								<div class="row">
+									<div class="span4 offset1">
+										&iquest;Est&aacute;s interesado en recibir informaci&oacute;n de ItalBank?
+									</div>
+									<div class="span1">
+										<div class="pull-right" style="margin-right:12px;">
+											<input type="checkbox" id="information">
+										</div>
+									</div>
+								</div>
 								<div class="row">
 									<div class="span3 offset3" id="enviar">
 									<!--	<a href="#myModal" type="submit" name="submit" class="btn btn-primary pull-right" data-toggle="modal"><strong>Enviar</strong></a> -->
 										<input type="submit" value="Enviar" class="btn btn-primary pull-right">
 									</div>
 								</div>
-								</div>
-							</form>
+							</div>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 			<footer>
@@ -562,22 +568,22 @@
 			</footer>
 		</div>
 		<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-		  <div class="modal-header">
-		  	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		    <img src="img/logo-modal.png"><br><br>
-		    Tu mensaje ha sido enviado con &eacute;xito.<br>
-		    ¡Pronto uno de nuestros agentes te contactar&aacute;!
-		  </div>
+			<div class="modal-header">
+		  		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    	<img src="img/logo-modal.png"><br><br>
+			    Tu mensaje ha sido enviado con &eacute;xito.<br>
+			    ¡Pronto uno de nuestros agentes te contactar&aacute;!
+		  	</div>
 		</div>
 		<script src="js/bootstrap.js"></script>
 		<script type="text/javascript">
 			$('#navbar').scrollspy()
 		</script>
 		<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-6896138-8");
-pageTracker._trackPageview();
-} catch (err) { }
-</script>
+			try {
+			var pageTracker = _gat._getTracker("UA-6896138-8");
+			pageTracker._trackPageview();
+			} catch (err) { }
+		</script>
 	</body>
 </html>
