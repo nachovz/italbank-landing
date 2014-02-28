@@ -218,7 +218,7 @@
 										<label for="phone">Tel&eacute;fono:</label>
 									</div>
 									<div class="span4">
-										<input  id="phone" maxlength="40" name="phone" size="20" type="text" />
+										<input id="00Ni000000Bv3qb" maxlength="40" name="00Ni000000Bv3qb" onkeydown="formatPhoneOnEnter(this, event);" size="20" type="text"/>
 									</div>
 									<div id="validation-phone">*</div>
 								</div>	
@@ -227,8 +227,8 @@
 										<label for="country">Pa&iacute;s de residencia:</label>
 									</div>
 									<div class="span4 styled-select">
-										<select id="country" name="country" type="text">
-											<option value="" selected>Selecciona tu pa&iacute;s de residencia</option>
+										<select id="00Ni000000Ci8h6" maxlength="100" name="00Ni000000Ci8h6" >
+											<option value="" selected>Selecciona</option>
 											<option value="AF">Afganistán</option> 
 						                      <option value="AL">Albania</option> 
 						                      <option value="DE">Alemania</option> 
@@ -469,23 +469,64 @@
 								</div>	
 								
 						</div>
-						<div class="span5">
+						<div class="span6">
 							
 								<div class="row">
-									<div class="span5 offset1">
+									<div class="span4 offset1">
 										¿Est&aacute;s interesado en recibir informaci&oacute;n de ItalBank?
-										<input type="checkbox" id="information"/><br><br>
+									</div>
+									<div class="span1">
+										<div class="pull-right" style="margin-right:12px">
+											<input type="checkbox" type="checkbox" id="information" > 
+										</div>
 									</div>
 								</div>
 								<div class="row">
-									<div class="span1 offset1">
+									<div class="span2 offset1">
+										<label for="lead_source">&iquest;C&oacute;mo supiste de nosotros?:</label>
+									</div>
+									<div class="span3 styled-select-right">
+										<select  id="lead_source" name="lead_source">
+											<option value="">--None--</option>
+											<option value="Advertisement">Advertisement</option>
+											<option value="Billboard">Billboard</option>
+											<option value="Branch Visit">Branch Visit</option>
+											<option value="Direct Mail">Direct Mail</option>
+											<option value="Email">Email</option>
+											<option value="Email Asociaciones Colombia">Email Asociaciones Colombia</option>
+											<option value="Employee Referral">Employee Referral</option>
+											<option value="Facebook">Facebook</option>
+											<option value="Google Ads">Google Ads</option>
+											<option value="Instagram">Instagram</option>
+											<option value="Linkedin">Linkedin</option>
+											<option value="Linkedin Ads">Linkedin Ads</option>
+											<option value="Listado Estudiantes">Listado Estudiantes</option>
+											<option value="Listado Referidos">Listado Referidos</option>
+											<option value="Nexos">Nexos</option>
+											<option value="Partner">Partner</option>
+											<option value="Public Relations">Public Relations</option>
+											<option value="Revista In/LAN">Revista In/LAN</option>
+											<option value="Revista Nexos/American Airlines">Revista Nexos/American Airlines</option>
+											<option value="Revista Panorama/Copa">Revista Panorama/Copa</option>
+											<option value="Seminar">Seminar</option>
+											<option value="Standford International Bank">Standford International Bank</option>
+											<option value="Standford International Europe">Standford International Europe</option>
+											<option value="Standford International USA">Standford International USA</option>
+											<option value="Twitter">Twitter</option>
+											<option value="Web">Web</option>
+											<option value="Word of mouth">Word of mouth</option>
+										</select>
+									</div>
+								</div>
+								<div class="row">
+									<div class="span2 offset1">
 										<label for="description">Comentarios:</label>
 									</div>
-									<div class="span2">
-										<textarea rows="9"name="description" id="description"></textarea>
+									<div class="span3">
+										<textarea rows="8"name="description" id="description"></textarea>
 									</div>
 								<div class="row">
-									<div class="span2" id="enviar">
+									<div class="span3 offset3" id="enviar">
 									<!--	<a href="#myModal" type="submit" name="submit" class="btn btn-primary pull-right" data-toggle="modal"><strong>Enviar</strong></a> -->
 										<input type="submit" value="Enviar" class="btn btn-primary pull-right">
 									</div>
@@ -498,7 +539,7 @@
 			</div>
 			<footer>
 				<div class="row">
-					<div class="span4">©2009 Italbank International Inc. OCIF EBI-56</div>
+					<div class="span4">©2014 Italbank International Inc. OCIF EBI-56</div>
 					<div class="span3 pull-right">
 						<a href="https://twitter.com/ItalbankIntl"><img src="img/twitter.png"></a>
 						<a href="https://www.facebook.com/Italbank"><img src="img/facebook.png"></a>

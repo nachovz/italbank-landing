@@ -108,9 +108,9 @@ input[type="text"], input[type="password"], input[type="datetime"], input[type="
 
 textarea {
 	background-color: #dedede;
-	margin-left: 30px;
-	width: 270px;
-	margin-bottom: 20px;
+	//margin-left: 30px;
+	//width: 270px;
+	//margin-bottom: 20px;
 	border: none;
 }
 
@@ -149,8 +149,37 @@ textarea {
 	border-radius: 5px 0 0 5px;
 }
 
+.styled-select-right {
+	height: 26px;
+	overflow: hidden;
+	overflow: -moz-hidden-unscrollable;
+	background: url(../img/caret.png) no-repeat right;
+	background-color: #dedede;
+	//margin-left: 50px;
+	//width: 280px;
+	margin-bottom: 20px;
+	border: none;
+	display: inline-block;
+	position:relative;
+	border-radius: 5px 0 0 5px;
+	//padding-right: 10px;
+}
+
+.styled-select-right select {
+	background: transparent;
+	-webkit-appearance: none;
+	//width: 380px;
+	font-size: 12px;
+	border: 0;
+	height: 33px;
+	position: absolute;
+	left: 0;
+	top: -7px;
+	border-radius: 5px 0 0 5px;
+}
+
 #enviar {
-	margin-left: 370px;
+	margin-left: 278px;
 }
 
 #select {
